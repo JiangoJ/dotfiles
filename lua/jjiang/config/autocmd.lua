@@ -44,12 +44,7 @@ vim.cmd.colorscheme("gruvbox")
 -- Linting
 vim.api.nvim_create_autocmd("BufWritePost", {
 	callback = function()
-		vim.lsp.buf.format({
-			-- only use null-ls
-			filter = function(client)
-				return client.name == "null-ls"
-			end,
-		})
+		vim.lsp.buf.format({})
 	end,
 })
 
